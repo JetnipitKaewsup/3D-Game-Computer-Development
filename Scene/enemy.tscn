@@ -49,3 +49,7 @@ shape = SubResource("CapsuleShape3D_yww8s")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.221799, 0, 0, 0, 0.459108, 0, 0, 0, 1.00741, 0, 0.917342, 0.729353)
 mesh = SubResource("BoxMesh_yww8s")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.201932, 0.837951)
+light_color = Color(0.831528, 0.0808959, 1.92523e-07, 1)

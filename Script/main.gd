@@ -26,10 +26,12 @@ func _physics_process(delta):
 func spawn_orb():
 	if orb and spawn_points.size() > 0:
 		for spawn_point in spawn_points:
-			var new_orb = orb.instantiate()
-			new_orb.global_transform.origin = spawn_point.global_transform.origin
-			add_child(new_orb)
-			print("add :", new_orb.global_transform.origin)
+			var pos = spawn_point.global_transform.origin
+			if not Gamemanager.collected_positions.any(
+					func(saved_pos): return saved_pos.distance_to(pos) < 0.1):
+				var new_orb = orb.instantiate()
+				new_orb.global_transform.origin = pos
+				add_child(new_orb)
 			
 func _update_minimap_frame():
 	var enemies = get_tree().get_nodes_in_group("Enemies")

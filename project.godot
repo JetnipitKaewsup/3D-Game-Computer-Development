@@ -14,6 +14,10 @@ config/name="Test_Final_Proj"
 run/main_scene="uid://cqmfv457vw7nt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[autoload]
+
+Gamemanager="*res://Scene/gamemanager.tscn"
+
 [display]
 
 window/size/viewport_width=1920

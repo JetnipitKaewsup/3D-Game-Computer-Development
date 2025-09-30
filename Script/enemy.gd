@@ -12,12 +12,11 @@ var UPDATE_INTERVAL := 0.2
 
 func _physics_process(delta):
 	var current_location = global_transform.origin
-	
+
 	if !is_on_floor():
 		velocity.y -= GRAVITY * delta
 	else:
 		velocity.y = 0
-
 
 	if nav_agent.is_navigation_finished():
 		velocity.x = move_toward(velocity.x, 0, ACCELERATION * delta)
@@ -28,6 +27,12 @@ func _physics_process(delta):
 		var target_velocity = direction * SPEED
 		velocity.x = move_toward(velocity.x, target_velocity.x, ACCELERATION * delta)
 		velocity.z = move_toward(velocity.z, target_velocity.z, ACCELERATION * delta)
+
+	# >>> หันไปทิศทางการเคลื่อนที่ <<<
+	if velocity.length() > 0.1:
+		var facing = Vector3(velocity.x, 0, velocity.z).normalized()
+		var target_rot = atan2(facing.x, facing.z)
+		rotation.y = lerp_angle(rotation.y, target_rot, 5.0 * delta)
 
 	move_and_slide()
 

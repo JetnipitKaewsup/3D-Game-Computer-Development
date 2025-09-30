@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt4vf5mqlmu8h"]
+[gd_scene load_steps=9 format=3 uid="uid://dt4vf5mqlmu8h"]
 
 [ext_resource type="Script" uid="uid://bdejx182vkrt7" path="res://Script/player.gd" id="1_kelma"]
 
@@ -19,6 +19,8 @@ material = SubResource("StandardMaterial3D_y8w33")
 size = Vector2(1, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kelma"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kelma"]
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_kelma")
@@ -45,5 +47,10 @@ mesh = SubResource("PlaneMesh_xa75v")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_kelma")
+
+[node name="Way" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 1.6, 0, 0, -1)
+visible = false
+mesh = SubResource("BoxMesh_kelma")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

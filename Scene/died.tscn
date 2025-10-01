@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://kvgex8go6ggx"]
 
 [ext_resource type="Texture2D" uid="uid://b6qhh23tymdfn" path="res://Died_Scene.png" id="1_6oawk"]
-[ext_resource type="Script" uid="uid://b202p678oo7o4" path="res://Script/died.gd" id="1_xnyms"]
+[ext_resource type="Script" path="res://Script/died.gd" id="1_xnyms"]
 [ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://Fonts/CrampsRegular-OV7od.ttf" id="2_xnyms"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2r2n8"]

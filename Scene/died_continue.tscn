@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qrdj27e13wq6"]
+[gd_scene load_steps=13 format=3 uid="uid://blfp3wqfjfyam"]
 
 [ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://Fonts/CrampsRegular-OV7od.ttf" id="1_bnrqm"]
 [ext_resource type="Script" uid="uid://bhhsuryjtcyvq" path="res://Script/died_continue.gd" id="1_pteyn"]

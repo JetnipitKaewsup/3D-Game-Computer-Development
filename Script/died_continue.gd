@@ -44,4 +44,4 @@ func _process(delta: float) -> void:
 		if choose == 1:
 			get_tree().change_scene_to_file("res://Scene/main.tscn")
 		elif choose == 2 :
-			get_tree().change_scene_to_file("res://Scene/main_menu.tscn")
+			get_tree().change_scene_to_file("res://Scene/main menu_LK.tscn")

@@ -148,6 +148,33 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bxl8e")
 
+[sub_resource type="Animation" id="Animation_54j8h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gate_002:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gate_001:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.54979e-08, 1.5708, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_fuhdh"]
 resource_name = "open"
 length = 2.0
@@ -176,33 +203,6 @@ tracks/1/keys = {
 "values": [Vector3(-7.54979e-08, 1.5708, 0), Vector3(0, 0.309185, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_54j8h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Gate_002:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-7.54979e-08, 2.73435, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Gate_001:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-7.54979e-08, 1.5708, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x6m3a"]
 _data = {
 &"RESET": SubResource("Animation_54j8h"),
@@ -217,12 +217,12 @@ mesh = SubResource("ArrayMesh_tai5f")
 skeleton = NodePath("")
 
 [node name="Gate_001" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.54979e-06, -7.54979e-06, 100, 0, 100, 7.54979e-06, -100, -5.69993e-13, 7.54979e-06, 2.04948, 0, 0)
+transform = Transform3D(-0.000361999, -7.54979e-06, 100, 0, 100, 7.54979e-06, -100, 2.73302e-11, -0.000361999, 2.04948, 0, 0)
 mesh = SubResource("ArrayMesh_7ruy4")
 skeleton = NodePath("")
 
 [node name="Gate_002" type="MeshInstance3D" parent="."]
-transform = Transform3D(-91.8219, -2.99028e-06, 39.6074, 0, 100, 7.54979e-06, -39.6074, 6.93236e-06, -91.8219, -2.05444, 0, 0)
+transform = Transform3D(-0.000361999, 0, 100, 0, 100, 0, -100, 0, -0.000361999, -2.05444, 0, 0)
 mesh = SubResource("ArrayMesh_ckr4n")
 skeleton = NodePath("")
 

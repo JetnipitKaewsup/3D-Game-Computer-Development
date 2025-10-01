@@ -10,13 +10,25 @@ var last_target_pos: Vector3 = Vector3.ZERO
 var update_timer := 0.0
 var UPDATE_INTERVAL := 0.2  
 
+func _ready() -> void:
+	$AnimationPlayer.play("LOcal/Mon_Run")
+
 func _physics_process(delta):
 	var current_location = global_transform.origin
 
-	if !is_on_floor():
+	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
 	else:
 		velocity.y = 0
+
+	if get_tree().get_current_scene():
+		var player = get_tree().current_scene.get_node_or_null("Player")
+		if player:
+			var distance_to_player = global_position.distance_to(player.global_position)
+			var min_speed = 8.0
+			var max_speed = 14.0
+			SPEED = clamp(distance_to_player, min_speed, max_speed)
+			update_target_location(player.global_transform.origin, delta)
 
 	if nav_agent.is_navigation_finished():
 		velocity.x = move_toward(velocity.x, 0, ACCELERATION * delta)
@@ -28,19 +40,15 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, target_velocity.x, ACCELERATION * delta)
 		velocity.z = move_toward(velocity.z, target_velocity.z, ACCELERATION * delta)
 
-	# >>> หันไปทิศทางการเคลื่อนที่ <<<
 	if velocity.length() > 0.1:
 		var facing = Vector3(velocity.x, 0, velocity.z).normalized()
 		var target_rot = atan2(facing.x, facing.z)
 		rotation.y = lerp_angle(rotation.y, target_rot, 5.0 * delta)
 
 	move_and_slide()
-
-	if get_tree().get_current_scene():
-		var player = get_tree().current_scene.get_node_or_null("Player")
-		if player:
-			update_target_location(player.global_transform.origin, delta)
-
+	if $AnimationPlayer.current_animation != "":
+		$AnimationPlayer.speed_scale = velocity.length() / 8.0
+		
 func update_target_location(target_location: Vector3, delta: float):
 	update_timer -= delta
 	if update_timer <= 0.0:

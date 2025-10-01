@@ -57,7 +57,7 @@ material = SubResource("StandardMaterial3D_khw5p")
 script = ExtResource("1_g53fn")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 mesh = SubResource("ArrayMesh_opvnk")
 skeleton = NodePath("")
 

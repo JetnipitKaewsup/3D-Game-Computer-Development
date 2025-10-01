@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://7iuqyhd3rchs"]
+
+[ext_resource type="Script" uid="uid://bc5dxcn3svkco" path="res://Script/main_menu.gd" id="1_87ipw"]
+[ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://Fonts/CrampsRegular-OV7od.ttf" id="2_hii65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owg0e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k373p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3y8m"]
+
+[node name="Main Menu" type="Node3D"]
+script = ExtResource("1_87ipw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -670.0
+offset_top = 120.0
+offset_right = 666.0
+offset_bottom = 232.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hii65")
+theme_override_font_sizes/font_size = 100
+text = "Labyrinth of Memories"
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_owg0e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_k373p")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e3y8m")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -215.5
+offset_top = -180.0
+offset_right = 215.5
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_hii65")
+theme_override_font_sizes/font_size = 40
+text = "Click to continue "
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]

@@ -1,11 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://kvgex8go6ggx"]
+[gd_scene load_steps=8 format=3 uid="uid://kvgex8go6ggx"]
 
 [ext_resource type="Texture2D" uid="uid://b6qhh23tymdfn" path="res://Died_Scene.png" id="1_6oawk"]
-[ext_resource type="Script" uid="uid://b202p678oo7o4" path="res://Scene/died.gd" id="1_xnyms"]
-[ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://CrampsRegular-OV7od.ttf" id="2_xnyms"]
+[ext_resource type="Script" uid="uid://b202p678oo7o4" path="res://Script/died.gd" id="1_xnyms"]
+[ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://Fonts/CrampsRegular-OV7od.ttf" id="2_xnyms"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2r2n8"]
 texture = ExtResource("1_6oawk")
+
+[sub_resource type="Animation" id="Animation_xnyms"]
+resource_name = "Fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2r2n8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_26i8u"]
+_data = {
+&"Fade": SubResource("Animation_xnyms"),
+&"RESET": SubResource("Animation_2r2n8")
+}
 
 [node name="Died" type="Node2D"]
 script = ExtResource("1_xnyms")
@@ -50,3 +87,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_xnyms")
 theme_override_font_sizes/font_size = 70
 text = "Bad Luck "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_26i8u")
+}

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://cqt2wsdfw8nou"]
 
-[ext_resource type="Texture2D" uid="uid://b1vleyslc3g7q" path="res://Scene/Hedge_Leaf_Texture.png" id="1_0b1dr"]
+[ext_resource type="Texture2D" uid="uid://b1vleyslc3g7q" path="res://Model/Hedge_Leaf_Texture.png" id="1_0b1dr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4f30"]
 transparency = 1

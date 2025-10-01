@@ -1,0 +1,186 @@
+[gd_scene load_steps=13 format=3 uid="uid://qrdj27e13wq6"]
+
+[ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://Fonts/CrampsRegular-OV7od.ttf" id="1_bnrqm"]
+[ext_resource type="Script" uid="uid://bhhsuryjtcyvq" path="res://Script/died_continue.gd" id="1_pteyn"]
+[ext_resource type="Texture2D" uid="uid://cgfx4ctkppsk8" path="res://Video/choose.png" id="2_pteyn"]
+[ext_resource type="Texture2D" uid="uid://wetpgh13is47" path="res://Video/skull-removebg-preview.png" id="4_h0hoy"]
+[ext_resource type="FontFile" uid="uid://donerk3ais3i1" path="res://Fonts/SuperRugged-4nBy9.ttf" id="5_4lipp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vl35"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0hoy"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4lipp"]
+line_spacing = 17.0
+font = ExtResource("1_bnrqm")
+font_size = 36
+
+[sub_resource type="Animation" id="Animation_bnrqm"]
+resource_name = "Move_Choose_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel/Choose1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1095, 640), Vector2(1095, 415)]
+}
+
+[sub_resource type="Animation" id="Animation_h0hoy"]
+resource_name = "Move_choose_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel/Choose1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1095, 413), Vector2(1095, 640)]
+}
+
+[sub_resource type="Animation" id="Animation_4lipp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Panel/Choose1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1095, 413)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ygs3x"]
+_data = {
+&"Move_Choose_2": SubResource("Animation_bnrqm"),
+&"Move_choose_1": SubResource("Animation_h0hoy"),
+&"RESET": SubResource("Animation_4lipp")
+}
+
+[node name="Died_Continue" type="Node2D"]
+script = ExtResource("1_pteyn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vl35")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 1206.0
+offset_top = 376.0
+offset_right = 1742.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_bnrqm")
+theme_override_font_sizes/font_size = 100
+text = "Continue
+
+Giveup"
+
+[node name="Choose1" type="Sprite2D" parent="CanvasLayer/Control/Panel"]
+position = Vector2(1095, 413)
+texture = ExtResource("2_pteyn")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 829.0
+offset_right = 1848.0
+offset_bottom = 832.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0hoy")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 872.0
+offset_right = 1020.0
+offset_bottom = 1329.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_bnrqm")
+theme_override_font_sizes/font_size = 51
+text = "   W      to Up
+    S       to Down
+Enter   to choose
+"
+label_settings = SubResource("LabelSettings_4lipp")
+
+[node name="Choose2" type="Sprite2D" parent="CanvasLayer/Control/Panel"]
+position = Vector2(1096, 641)
+texture = ExtResource("2_pteyn")
+
+[node name="Skull-removebg-preview" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(526, 411)
+scale = Vector2(2.98267, 2.98267)
+texture = ExtResource("4_h0hoy")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 284.0
+offset_top = 680.0
+offset_right = 485.0
+offset_bottom = 709.0
+theme_override_fonts/font = ExtResource("1_bnrqm")
+theme_override_font_sizes/font_size = 70
+text = " Chances left"
+
+[node name="current chance" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 232.178
+offset_top = 667.51
+offset_right = 249.178
+offset_bottom = 701.51
+theme_override_fonts/font = ExtResource("5_4lipp")
+theme_override_font_sizes/font_size = 90
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="Last Chance" type="Label" parent="CanvasLayer/Control"]
+modulate = Color(0.909804, 0, 0.219608, 1)
+layout_mode = 0
+offset_left = 238.0
+offset_top = 671.0
+offset_right = 833.0
+offset_bottom = 761.0
+theme_override_fonts/font = ExtResource("1_bnrqm")
+theme_override_font_sizes/font_size = 80
+text = "Last Chance "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ygs3x")
+}
+
+[node name="HeartPlayer" type="AnimationPlayer" parent="."]

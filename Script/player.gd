@@ -5,7 +5,7 @@ const WALK_SPEED = 5.0
 const SPRINT_SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
-var player_health = 3
+var player_health 
 
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
@@ -14,11 +14,15 @@ var t_bob = 0.0
 var camera_origin := Vector3.ZERO
 var pitch = 0.0
 
+@onready var ray_cast: RayCast3D = $Head/Camera3D/RayCast3D
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 
 
+
 func _ready():
+	player_health = 1
+	camera_origin = camera.transform.origin
 	if OS.has_feature("web"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
@@ -36,8 +40,13 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta: float) -> void:
+	if ray_cast.is_colliding():
+		Gamemanager.set_pnt(true)
+	else :
+		Gamemanager.set_pnt(false)
 	if player_health <= 0:
-		get_tree().change_scene_to_file("res://Scene/died.tscn")
+		Gamemanager.update_chance(-1)
+		get_tree().change_scene_to_file("res://Scene/jump_scare.tscn")
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 1.25
@@ -47,6 +56,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("sprint"):
 		speed = SPRINT_SPEED
+		
 	else:
 		speed = WALK_SPEED
 
@@ -80,3 +90,4 @@ func _headbob(time) -> Vector3:
 func _on_area_3d_area_entered(area) -> void:
 	if area.is_in_group("Enemies"):
 		player_health -= 1
+		print("current player health : " + str(player_health))

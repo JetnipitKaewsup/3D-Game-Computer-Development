@@ -1,0 +1,39 @@
+[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://ddfhdkchkfxma"]
+
+[ext_resource type="Shader" uid="uid://cx4tqhni2govc" path="res://Cutscene/electric/lightningParticles.tres" id="1_cfs7k"]
+[ext_resource type="Texture2D" uid="uid://j40l5rggopjb" path="res://Cutscene/electric/CNpQ9MK.png" id="3_613kf"]
+
+[sub_resource type="Gradient" id="Gradient_seseh"]
+offsets = PackedFloat32Array(0.693487, 0.885057, 1)
+colors = PackedColorArray(0.201112, 0.385895, 0.496481, 1, 1, 1, 1, 0.692308, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cfs7k"]
+gradient = SubResource("Gradient_seseh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpsn2"]
+render_priority = 0
+shader = ExtResource("1_cfs7k")
+shader_parameter/Tint = Color(1, 1, 1, 1)
+shader_parameter/Speed = 0.28
+shader_parameter/ParticleTexture = ExtResource("3_613kf")
+shader_parameter/Stretch = 1.2
+shader_parameter/Offset = 0.0
+shader_parameter/GradientMap = SubResource("GradientTexture2D_cfs7k")
+shader_parameter/Intensity = 5.3
+
+[resource]
+_surfaces = [{
+"aabb": AABB(-1.00592, -0.685275, -0.581659, 2.00181, 0.819385, 1.05799),
+"attribute_data": PackedByteArray("p0Ng9XEvYPWnQ54KcS+eCtxXngrcV2D1Emxg9RJsngpHgJ4KR4Bg9XyUngp8lGD1sqieCrKoYPXnvJ4K57xg9RzRngoc0WD1UuVg9VLlngqH+Z4Kh/n/f4f5YPUcG2D15gZg9eYG/38cG54K5gaeClEvngpRL2D1p0P/f3Ev/3/cV/9/Emz/f0eA/398lP9/sqj/f+e8/38c0f9/UuX/fxwb/39RL/9/"),
+"format": 34896613399,
+"index_count": 144,
+"index_data": PackedByteArray("AAABAB4AHgABAB8AHgAfAAIAAgAfAAMABAAeAAIAIAAAAB4AIAAeAAQABQAAACAABwAgAAQAIQAFACAAIQAgAAcABgAFACEACAAhAAcAIgAGACEAIgAhAAgACQAGACIACgAiAAgAIwAJACIAIwAiAAoACwAJACMADAAjAAoAJAALACMAJAAjAAwADQALACQADgAkAAwAJQANACQAJQAkAA4ADwANACUAEAAlAA4AJgAPACUAJgAlABAAEQAPACYAEwAmABAAJwARACYAJwAmABMAFAAnABMAEgARACcAFQAnABQAFQASACcAFgASABUAFwAYACgAKAAYABkAKQAXACgAHQAXACkAKQAoABwAHAAoABoAKAAZABoAGgAZABsA"),
+"lods": [0.0803972, PackedByteArray("AAABAAIAAgABAAMABAAAAAIABQAAAAQABgAFAAQABgAEAAcACAAGAAcACQAGAAgACgAJAAgACwAJAAoADAALAAoADQALAAwADgANAAwADwANAA4AEAAPAA4AEQAPABAAEgARABAAEgAQABMAFAASABMAFQASABQAFgASABUAFwAYABkAFwAZABoAGgAZABsAHAAXABoAHQAXABwA")],
+"material": SubResource("ShaderMaterial_kpsn2"),
+"name": "pSphere2SG1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 42,
+"vertex_data": PackedByteArray("8AfdujYkpOSdD969ZkRy6aYCY296DM36AADTfzs9zvwNGDZgHQGd/msbHLboHk3hXz9flU4xkeQfPlg24xPF/dxvFBeTHFf+zm6Zdz03oOdAqAAA1iFX/+WnzGQnOczpRtbuBqYxXf5/1m5fPkeX6ZD0EjBiQ4/0/fIHfghZxuuO+mBRoXPI6UL22pt6g2j+vOka0xW5Tfvk8ESBVbhc6jLazKET+o3tqdxc0f//9vWK1P//U/BP+kkgqNaSeHHy1jM160G6ZPH/IQHCyM1P860FgJB5iR/6DRlmkCjTYvYAANN/Oz23/J0P3r1mRIv3LwBMn+sNl/QyAXuhwz729FYWp5MAAETvgDyrav4UDPA9b5tGxx1D8vOqyC4rIzf0W9tbNNwxKPYj+lVfbkab/P//Z3jce4T02/Nbp/q/q/N9Dem2EYRm9TIBe6HDPqD9ueJuOyjl6i9hKziK30e/ipHmgW2k5bRyOOUwcw7o/29E8CV0lO5UdZv2m3yU9lN9qAlba9nnLo+pFJdSp8UQnz4Dgj1xr7CdPRxqJ14C5NByAs3VsBLDJ5obiiV43hYmZt+5JTbmQih68G8uAfA1K+tH04o33BImAfFlTBLxazVX6SJvAeXfcETvcnRa91J+ieTwj3bK5pfZDsQ1kw/iK7/mayqB6oMw")
+}]
+blend_shape_mode = 0

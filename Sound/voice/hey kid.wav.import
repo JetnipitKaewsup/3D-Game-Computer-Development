@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqx741xk4n2wr"
+path="res://.godot/imported/hey kid.wav-26c8b627d544e9ccc589667f0c69432d.sample"
+
+[deps]
+
+source_file="res://Sound/voice/hey kid.wav"
+dest_files=["res://.godot/imported/hey kid.wav-26c8b627d544e9ccc589667f0c69432d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

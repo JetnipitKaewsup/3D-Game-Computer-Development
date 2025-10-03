@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://nbpklr57bcib"]
 
-[ext_resource type="Script" uid="uid://66igpjxn5eq7" path="res://Script/jump_scare.gd" id="1_2i2c8"]
+[ext_resource type="Script" path="res://Script/jump_scare.gd" id="1_2i2c8"]
 [ext_resource type="Animation" uid="uid://dpup2ls6gns8k" path="res://Animation/Scream.res" id="1_d2382"]
 [ext_resource type="AudioStream" uid="uid://bgdpspi4ojn3u" path="res://cringe-scare-47561 (mp3cut.net).mp3" id="3_bp7m5"]
 

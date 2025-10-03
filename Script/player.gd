@@ -28,8 +28,9 @@ var is_left_step := true
 func _ready():
 	player_health = 1
 	camera_origin = camera.transform.origin
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#camera.current = true
 
 func _unhandled_input(event):
 	if OS.has_feature("web"):
@@ -40,7 +41,14 @@ func _unhandled_input(event):
 		rotate_y(-event.relative.x * SENSITIVITY)
 		pitch = clamp(pitch - event.relative.y * SENSITIVITY, deg_to_rad(-40), deg_to_rad(60))
 		camera.rotation.x = pitch
-
+	#if OS.has_feature("web"):
+		#if event is InputEventMouseButton and event.pressed:
+			#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#else:
+		#if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			#rotate_y(-event.relative.x * SENSITIVITY)
+			#pitch = clamp(pitch - event.relative.y * SENSITIVITY, deg_to_rad(-40), deg_to_rad(60))
+			#camera.rotation.x = pitch
 
 func _physics_process(delta: float) -> void:
 	if ray_cast.is_colliding():

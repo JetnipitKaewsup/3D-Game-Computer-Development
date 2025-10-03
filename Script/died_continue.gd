@@ -12,6 +12,7 @@ var choose = 1
 
 
 func _ready() -> void:
+	$BackGround.play()
 	choose = 1
 	choose_1.visible = true
 	choose_2.visible = false
@@ -29,11 +30,13 @@ func _process(delta: float) -> void:
 		current_chance_text.visible = false
 		last_chance.visible = true
 	if Input.is_action_just_pressed("move_forward") && choose == 2:
+		$Choose.play()
 		choose = 1
 		choose_1.visible = true
 		choose_2.visible = false
 		print('1')
 	if Input.is_action_just_pressed("move_back") && choose == 1:
+		$Choose.play()
 		choose = 2
 		choose_1.visible = false
 		choose_2.visible = true

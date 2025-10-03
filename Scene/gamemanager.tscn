@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsqmqj0m637jj"]
+[gd_scene load_steps=3 format=3 uid="uid://dsqmqj0m637jj"]
 
 [ext_resource type="Script" uid="uid://bua64y1ae2w7c" path="res://Script/gamemanager.gd" id="1_wno17"]
+[ext_resource type="AudioStream" uid="uid://1gyibo3ken3y" path="res://Sound/SFX/water-drop-3-84577.mp3" id="2_sntri"]
 
 [node name="Gamemanager" type="Node3D"]
 script = ExtResource("1_wno17")
+
+[node name="Collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sntri")

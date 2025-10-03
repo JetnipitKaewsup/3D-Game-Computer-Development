@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://blfp3wqfjfyam"]
+[gd_scene load_steps=15 format=3 uid="uid://blfp3wqfjfyam"]
 
 [ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://Fonts/CrampsRegular-OV7od.ttf" id="1_bnrqm"]
 [ext_resource type="Script" uid="uid://bhhsuryjtcyvq" path="res://Script/died_continue.gd" id="1_pteyn"]
 [ext_resource type="Texture2D" uid="uid://cgfx4ctkppsk8" path="res://Video/choose.png" id="2_pteyn"]
 [ext_resource type="Texture2D" uid="uid://wetpgh13is47" path="res://Video/skull-removebg-preview.png" id="4_h0hoy"]
 [ext_resource type="FontFile" uid="uid://donerk3ais3i1" path="res://Fonts/SuperRugged-4nBy9.ttf" id="5_4lipp"]
+[ext_resource type="AudioStream" uid="uid://b62381r1ehyum" path="res://Sound/SFX/pan-filmsilly-25608.mp3" id="6_ygs3x"]
+[ext_resource type="AudioStream" uid="uid://c1nkpd0dtoaaf" path="res://Sound/SFX/computer-mouse-click-352734.mp3" id="7_a60jq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vl35"]
 bg_color = Color(0, 0, 0, 1)
@@ -184,3 +186,11 @@ libraries = {
 }
 
 [node name="HeartPlayer" type="AnimationPlayer" parent="."]
+
+[node name="BackGround" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ygs3x")
+volume_db = -10.0
+
+[node name="Choose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_a60jq")
+volume_db = -5.0

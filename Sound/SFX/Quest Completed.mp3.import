@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3t8jrldwjys4"
+path="res://.godot/imported/Quest Completed.mp3-0c4241e48a45de7bb3de627c7cc0bd68.mp3str"
+
+[deps]
+
+source_file="res://Sound/SFX/Quest Completed.mp3"
+dest_files=["res://.godot/imported/Quest Completed.mp3-0c4241e48a45de7bb3de627c7cc0bd68.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

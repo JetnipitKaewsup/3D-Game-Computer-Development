@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dt4vf5mqlmu8h" path="res://Scene/player.tscn" id="1_f6udf"]
 [ext_resource type="Script" uid="uid://c2mk11e3frlwt" path="res://Script/main.gd" id="1_r34rm"]
 [ext_resource type="PackedScene" uid="uid://dpq8ttngraitk" path="res://Scene/water drop .tscn" id="2_3pt4j"]
-[ext_resource type="Texture2D" uid="uid://cino0vtehup7g" path="res://satara_night_no_lamps_4k.exr" id="3_3pt4j"]
 [ext_resource type="PackedScene" uid="uid://bpl2f575xq6ko" path="res://Scene/enemy.tscn" id="4_2wwxx"]
 [ext_resource type="Texture2D" uid="uid://b1vleyslc3g7q" path="res://Model/Hedge_Leaf_Texture.png" id="4_ow1sv"]
+[ext_resource type="Texture2D" uid="uid://bsnwh43nbrqmj" path="res://satara_night_no_lamps_1k.exr" id="5_p2wc2"]
 [ext_resource type="Texture2D" uid="uid://bs7qesw3m2cqu" path="res://Floor Texture/Bricks076C_1K-JPG/Bricks076C_1K-JPG_Color.jpg" id="7_c2iwn"]
 [ext_resource type="Texture2D" uid="uid://d2w6rtf77br6w" path="res://Floor Texture/Bricks076C_1K-JPG/Bricks076C_1K-JPG_AmbientOcclusion.jpg" id="8_3pt4j"]
 [ext_resource type="Texture2D" uid="uid://d83hobqwpkly" path="res://Floor Texture/Bricks076C_1K-JPG/Bricks076C_1K-JPG_Roughness.jpg" id="8_7y4ci"]
@@ -21,7 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ddfhdkchkfxma" path="res://Cutscene/electric/lighting1.tres" id="19_jbas8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c2iwn"]
-panorama = ExtResource("3_3pt4j")
+panorama = ExtResource("5_p2wc2")
 
 [sub_resource type="Sky" id="Sky_0y2cb"]
 sky_material = SubResource("PanoramaSkyMaterial_c2iwn")

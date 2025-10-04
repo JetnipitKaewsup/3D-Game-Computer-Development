@@ -26,7 +26,7 @@ var is_left_step := true
 
 
 func _ready():
-	player_health = 200
+	player_health = 1
 	camera_origin = camera.transform.origin
 
 	if OS.has_feature("web"):

@@ -1,7 +1,7 @@
-[gd_scene load_steps=138 format=4 uid="uid://bxdkrhlcmqjoq"]
+[gd_scene load_steps=137 format=4 uid="uid://bxdkrhlcmqjoq"]
 
 [ext_resource type="Script" uid="uid://ddx8q731q7ko4" path="res://Script/main_menu_LK.gd" id="1_t8see"]
-[ext_resource type="Texture2D" uid="uid://cino0vtehup7g" path="res://satara_night_no_lamps_4k.exr" id="2_3js08"]
+[ext_resource type="Texture2D" uid="uid://bsnwh43nbrqmj" path="res://satara_night_no_lamps_1k.exr" id="2_3mvtv"]
 [ext_resource type="Texture2D" uid="uid://bs7qesw3m2cqu" path="res://Floor Texture/Bricks076C_1K-JPG/Bricks076C_1K-JPG_Color.jpg" id="3_sajj8"]
 [ext_resource type="Texture2D" uid="uid://d2w6rtf77br6w" path="res://Floor Texture/Bricks076C_1K-JPG/Bricks076C_1K-JPG_AmbientOcclusion.jpg" id="4_0obh6"]
 [ext_resource type="Texture2D" uid="uid://byipellqvg4kv" path="res://Floor Texture/Bricks076C_1K-JPG/Bricks076C_1K-JPG_NormalDX.jpg" id="5_i5bpc"]
@@ -20,7 +20,6 @@
 [ext_resource type="AudioStream" uid="uid://dv8gdiv4e80c1" path="res://Sound/voice/forgot name.MP3" id="14_macab"]
 [ext_resource type="AudioStream" uid="uid://b7pnsdft3yogv" path="res://Sound/SFX/lightning .MP3" id="14_pjygw"]
 [ext_resource type="AudioStream" uid="uid://k3y4kmyike6k" path="res://Sound/voice/3.MP3" id="15_p3vfu"]
-[ext_resource type="Texture2D" uid="uid://ssgouvpa0wra" path="res://Video/warning sign.png" id="16_0obh6"]
 [ext_resource type="AudioStream" uid="uid://canclbbbumbjv" path="res://Sound/voice/4.wav" id="16_5n0pb"]
 [ext_resource type="PackedScene" uid="uid://coqvp7q1u6ii2" path="res://Cutscene/PlayerCutScene.tscn" id="16_macab"]
 [ext_resource type="PackedScene" uid="uid://bwry5b88xu1q" path="res://Model/Bee.tscn" id="17_3mvtv"]
@@ -33,10 +32,10 @@
 [ext_resource type="ArrayMesh" uid="uid://b8bpqjew7vjqc" path="res://Cutscene/electric/lighting2.mesh" id="21_gfhju"]
 [ext_resource type="AudioStream" uid="uid://d00imu0srhvvx" path="res://Sound/voice/8.MP3" id="21_l5mee"]
 [ext_resource type="ArrayMesh" uid="uid://ddfhdkchkfxma" path="res://Cutscene/electric/lighting1.tres" id="22_27dt8"]
-[ext_resource type="AudioStream" uid="uid://ox1wy0vt5ceb" path="res://Sound/music/enchanted-mystery.mp3" id="23_p3vfu"]
+[ext_resource type="AudioStream" uid="uid://cju53303bl43y" path="res://Sound/music/enchanted-mystery.ogg" id="23_3mvtv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c2iwn"]
-panorama = ExtResource("2_3js08")
+panorama = ExtResource("2_3mvtv")
 
 [sub_resource type="Sky" id="Sky_sblpm"]
 sky_material = SubResource("PanoramaSkyMaterial_c2iwn")
@@ -1782,7 +1781,7 @@ tracks/29/keys = {
 "times": PackedFloat32Array(0, 11.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("12_jma0k"), ExtResource("23_p3vfu")]
+"values": [ExtResource("12_jma0k"), ExtResource("23_3mvtv")]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
@@ -2938,18 +2937,6 @@ grow_vertical = 2
 text = "Warning"
 label_settings = SubResource("LabelSettings_ngy65")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Caution"]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -250.0
-offset_right = 250.0
-offset_bottom = 500.0
-grow_horizontal = 2
-texture = ExtResource("16_0obh6")
-
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Caution"]
 layout_mode = 1
 anchors_preset = 5
@@ -3047,7 +3034,7 @@ light_energy = 7.768
 omni_range = 12.691
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_pjygw")
+stream = ExtResource("11_fnnje")
 volume_db = -6.20435
 
 [node name="music" type="AudioStreamPlayer" parent="."]

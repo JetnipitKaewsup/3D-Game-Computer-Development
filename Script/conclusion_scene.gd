@@ -3,8 +3,9 @@ extends Node3D
 @onready var gate = $Gate/AnimationPlayer
 
 func _ready() -> void:
+	$Bad.stop()
+	$Good.stop()
 	Gamemanager.first_start = false
-	Gamemanager.reset()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Gamemanager.get_game_result():
 		win()
@@ -13,6 +14,7 @@ func _ready() -> void:
 
 
 func win():
+	$Good.play()
 	print(Gamemanager.get_time_string())
 	$CanvasLayer/Control/Panel/win/Time.text = Gamemanager.get_time_string()
 	$CanvasLayer/Control/Panel/win/Die_frequenzy.text = str(3 - Gamemanager.player_chance)
@@ -22,6 +24,7 @@ func win():
 	$AnimationPlayer.play("win")
 
 func lose():
+	$Bad.play()
 	print(Gamemanager.get_time_string())
 	$AnimationPlayer2.play("Mon_run")
 	$CanvasLayer/Control/Panel/lose/Die_frequenzy.text = str(3 - Gamemanager.player_chance)
@@ -37,6 +40,7 @@ func _on_main_menu_pressed() -> void:
 	SceneTransition.change_scene("res://Scene/main menu_LK.tscn")
 
 
+	
 func _on_retry_pressed() -> void:
 	Gamemanager.reset()
 	SceneTransition.change_scene("res://Scene/main.tscn")

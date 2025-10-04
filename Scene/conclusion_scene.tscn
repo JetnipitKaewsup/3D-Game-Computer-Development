@@ -1,6 +1,5 @@
-[gd_scene load_steps=91 format=4 uid="uid://3althk67wxsq"]
+[gd_scene load_steps=89 format=4 uid="uid://3althk67wxsq"]
 
-[ext_resource type="Texture2D" uid="uid://cino0vtehup7g" path="res://satara_night_no_lamps_4k.exr" id="1_24k51"]
 [ext_resource type="Script" uid="uid://cnlcqp1hxegox" path="res://Script/conclusion_scene.gd" id="1_on7ma"]
 [ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://Fonts/CrampsRegular-OV7od.ttf" id="2_jcjcx"]
 [ext_resource type="Texture2D" uid="uid://bs7qesw3m2cqu" path="res://Floor Texture/Bricks076C_1K-JPG/Bricks076C_1K-JPG_Color.jpg" id="2_o5jci"]
@@ -14,6 +13,8 @@
 [ext_resource type="PackedScene" path="res://Model/Gate.tscn" id="9_o5jci"]
 [ext_resource type="Animation" uid="uid://ba05r6rf7krtm" path="res://Animation/Run.res" id="11_6bqvy"]
 [ext_resource type="PackedScene" uid="uid://bpl2f575xq6ko" path="res://Scene/enemy.tscn" id="14_d2y7l"]
+[ext_resource type="AudioStream" uid="uid://brfxlq0atq6l2" path="res://Sound/SFX/sad-documentary-background-music-365827.ogg" id="14_d426r"]
+[ext_resource type="AudioStream" uid="uid://jli0q0c1ydy5" path="res://Sound/SFX/fullness-of-life-in-christ-373084.mp3" id="16_6afgv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjjfu"]
 bg_color = Color(0.103744, 0.103744, 0.103744, 1)
@@ -30,12 +31,12 @@ normal_texture = ExtResource("4_6bqvy")
 ao_enabled = true
 ao_light_affect = 1.0
 ao_texture = ExtResource("3_on7ma")
-uv1_scale = Vector3(50, 50, 50)
+uv1_scale = Vector3(200, 200, 200)
 
 [sub_resource type="BoxMesh" id="BoxMesh_j6b1v"]
 lightmap_size_hint = Vector2i(1504, 766)
 material = SubResource("StandardMaterial3D_2yh6j")
-size = Vector3(150, 1, 150)
+size = Vector3(150, 1, 350)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qqecb"]
 points = PackedVector3Array(-75, -0.5, -75, -75, 0.5, -75, 75, -0.5, -75, -75, -0.5, 75, -75, 0.5, 75, 75, 0.5, -75, 75, -0.5, 75, 75, 0.5, 75)
@@ -322,28 +323,7 @@ item/7/navigation_layers = 1
 item/7/preview = SubResource("ImageTexture_8bkap")
 metadata/_editor_source_scene = "res://wall.tscn"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wwxx"]
-albedo_texture = ExtResource("2_o5jci")
-roughness = 0.72
-roughness_texture = ExtResource("5_jcjcx")
-normal_enabled = true
-normal_scale = 1.49
-normal_texture = ExtResource("4_6bqvy")
-ao_enabled = true
-ao_light_affect = 1.0
-ao_texture = ExtResource("3_on7ma")
-uv1_scale = Vector3(50, 50, 50)
-
-[sub_resource type="BoxMesh" id="BoxMesh_on7ma"]
-lightmap_size_hint = Vector2i(1504, 766)
-material = SubResource("StandardMaterial3D_2wwxx")
-size = Vector3(150, 1, 150)
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6bqvy"]
-panorama = ExtResource("1_24k51")
-
 [sub_resource type="Sky" id="Sky_sblpm"]
-sky_material = SubResource("PanoramaSkyMaterial_6bqvy")
 
 [sub_resource type="Environment" id="Environment_jcjcx"]
 background_mode = 2
@@ -1926,10 +1906,6 @@ light_color = Color(0.378086, 0.187372, 9.62615e-08, 1)
 light_energy = 7.268
 omni_range = 12.691
 
-[node name="gate_floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.265, 0.276, -149.377)
-mesh = SubResource("BoxMesh_on7ma")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jcjcx")
 
@@ -2373,6 +2349,14 @@ libraries = {
 
 [node name="Enemy" parent="." instance=ExtResource("14_d2y7l")]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, -17, 1.2, -70.2)
+
+[node name="Bad" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_d426r")
+volume_db = -15.0
+
+[node name="Good" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_6afgv")
+volume_db = -20.0
 
 [connection signal="pressed" from="CanvasLayer/Control/Panel/lose/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/Main menu" to="." method="_on_main_menu_pressed"]

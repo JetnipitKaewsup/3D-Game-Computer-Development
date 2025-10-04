@@ -1,6 +1,6 @@
 extends Node3D
 
-var score = 299
+var score = 0
 var collected_positions: Array[Vector3] = []
 var have_died = false
 var mon_spawn_left = 0
@@ -79,7 +79,10 @@ func get_time() -> float:
 	return play_time
 
 func get_time_string() -> String:
-	return str(play_time) + " secs "
+	var total_seconds = int(play_time)
+	var minutes = total_seconds / 60
+	var seconds = total_seconds % 60
+	return str(minutes) + " mins " + str(seconds) + " secs"
 
 func set_game_result(status):
 	end_game_good = status

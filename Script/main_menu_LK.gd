@@ -22,11 +22,6 @@ extends Node3D
 	"bee" : bee
 }
 func _ready() -> void:
-	
-	#camera_1.current = false
-	#camera_2.current = false
-	#front.current = false
-	#view_4.current = false
 	print("eiei")
 	print(Gamemanager.get_currcutscene())
 	if Gamemanager.get_currcutscene() == "give up":
@@ -52,7 +47,12 @@ func _ready() -> void:
 		SceneTransition.change_scene("res://Scene/conclusion_scene.tscn")
 	#animation_player.play("cutscene")
 	
-
+func _process(delta):
+	if Gamemanager.get_currcutscene() == "Cutscene":
+		if Input.is_action_just_pressed("Enter"):
+			animation_player.stop()
+			SceneTransition.change_scene("res://Scene/main.tscn")
+			
 
 func gate_open():
 	gate.play("open")
@@ -121,6 +121,7 @@ func _on_start_button_pressed() -> void:
 	animation_player.play("warning")
 	await animation_player.animation_finished
 	if Gamemanager.first_start:
+		Gamemanager.set_currcutscene("Cutscene")
 		animation_player.play("cutscene")
 		await animation_player.animation_finished
 	SceneTransition.change_scene("res://Scene/main.tscn")

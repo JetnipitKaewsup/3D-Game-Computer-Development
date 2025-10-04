@@ -1083,6 +1083,18 @@ tracks/36/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("CanvasLayer/Skip:visible")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_i5bpc"]
 resource_name = "bad ending"
@@ -1346,6 +1358,18 @@ tracks/19/path = NodePath("CanvasLayer/Conversation:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("CanvasLayer/Skip:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1807,6 +1831,18 @@ tracks/31/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("CanvasLayer/Skip:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_gfhju"]
 resource_name = "good ending"
@@ -2067,6 +2103,18 @@ tracks/19/path = NodePath("CanvasLayer/Conversation:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("CanvasLayer/Skip:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2364,6 +2412,18 @@ tracks/22/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("CanvasLayer/Skip:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_0obh6"]
 resource_name = "sacred tree"
@@ -2614,6 +2674,18 @@ tracks/18/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("CanvasLayer/Skip:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_27dt8"]
 resource_name = "warning"
@@ -2661,6 +2733,18 @@ tracks/3/path = NodePath("CanvasLayer/Conversation:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Skip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2856,7 +2940,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameName" type="Label" parent="CanvasLayer/Text"]
-modulate = Color(1, 1, 1, 0.0727245)
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3012,6 +3096,26 @@ text = "Hey… kid. Are you alright?"
 scroll_following = true
 horizontal_alignment = 1
 
+[node name="Skip" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Skip"]
+layout_mode = 0
+offset_left = -176.0
+offset_top = 24.0
+offset_right = 13.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("14_ets7r")
+theme_override_font_sizes/font_size = 25
+text = "Enter to skip"
+
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94901, 29.4475, 1.07567)
 visible = false
@@ -3037,7 +3141,7 @@ omni_range = 12.691
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_fnnje")
-volume_db = -6.20435
+volume_db = -15.571
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_jma0k")

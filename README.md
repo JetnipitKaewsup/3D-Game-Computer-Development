@@ -23,7 +23,7 @@
 
 # ตัวอย่างเกม
 
-![ตัวอย่างเกม2](https://drive.google.com/uc?export=view&id=1aOIM151l1i_GXeWcli57OhNTsXcpcGg)
+![ตัวอย่างเกม2](https://drive.google.com/uc?export=view&id=1aOIM151l1i_GXeWcli57OhNTsXcpcGgt)
 
 ตัวอย่างที่ 1
 

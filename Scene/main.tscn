@@ -14,10 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://b0s1s1ls0d4md" path="res://Model/Tree.tscn" id="13_0sxm5"]
 [ext_resource type="FontFile" uid="uid://eev2ja5hbpee" path="res://Fonts/CrampsRegular-OV7od.ttf" id="13_6njx3"]
 [ext_resource type="FontFile" uid="uid://donerk3ais3i1" path="res://Fonts/SuperRugged-4nBy9.ttf" id="14_0y2cb"]
-[ext_resource type="PackedScene" path="res://Model/Fountain.tscn" id="14_hspdg"]
+[ext_resource type="PackedScene" uid="uid://0pow6k5ii5wn" path="res://Model/Fountain.tscn" id="14_hspdg"]
 [ext_resource type="AudioStream" uid="uid://3t8jrldwjys4" path="res://Sound/SFX/Quest Completed.mp3" id="16_6njx3"]
 [ext_resource type="AudioStream" uid="uid://dv0o1elck7ne7" path="res://Sound/SFX/spooky-wind-57845.mp3" id="17_0y2cb"]
-[ext_resource type="PackedScene" path="res://Model/Gate.tscn" id="18_p2wc2"]
+[ext_resource type="PackedScene" uid="uid://c6cty4dcmybjj" path="res://Model/Gate.tscn" id="18_p2wc2"]
 [ext_resource type="ArrayMesh" uid="uid://ddfhdkchkfxma" path="res://Cutscene/electric/lighting1.tres" id="19_jbas8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c2iwn"]
@@ -4006,7 +4006,7 @@ offset_right = 371.709
 offset_bottom = 607.369
 theme_override_fonts/font = ExtResource("13_6njx3")
 theme_override_font_sizes/font_size = 25
-text = "Quest :
+text = "Quest
 Collect        water drop to the tree"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Quest1/Quest"]
@@ -4036,7 +4036,7 @@ offset_right = 371.709
 offset_bottom = 607.369
 theme_override_fonts/font = ExtResource("13_6njx3")
 theme_override_font_sizes/font_size = 25
-text = "Quest :"
+text = "Quest "
 
 [node name="Details" type="Label" parent="CanvasLayer/Control/Quest1/Quest2"]
 modulate = Color(1, 1, 0, 1)

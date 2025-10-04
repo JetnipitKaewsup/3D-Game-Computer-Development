@@ -47,4 +47,5 @@ func _process(delta: float) -> void:
 		if choose == 1:
 			get_tree().change_scene_to_file("res://Scene/main.tscn")
 		elif choose == 2 :
+			Gamemanager.set_currcutscene("give up")
 			get_tree().change_scene_to_file("res://Scene/main menu_LK.tscn")

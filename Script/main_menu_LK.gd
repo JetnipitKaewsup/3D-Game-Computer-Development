@@ -22,12 +22,18 @@ extends Node3D
 	"bee" : bee
 }
 func _ready() -> void:
+	
 	#camera_1.current = false
 	#camera_2.current = false
 	#front.current = false
 	#view_4.current = false
 	print("eiei")
 	print(Gamemanager.get_currcutscene())
+	if Gamemanager.get_currcutscene() == "give up":
+		animation_player.play("main menu")
+		animation_player.seek(23.0)
+	else:
+		animation_player.seek(0.0)
 	if Gamemanager.get_currcutscene() == "main menu":
 		animation_player.play("main menu")
 	if Gamemanager.get_currcutscene() == "sacred tree":
@@ -35,10 +41,12 @@ func _ready() -> void:
 		await animation_player.animation_finished
 		SceneTransition.change_scene("res://Scene/main.tscn")
 	if Gamemanager.get_currcutscene() == "bad ending":
+		Gamemanager.stop_timer()
 		animation_player.play("bad ending")	
 		await animation_player.animation_finished
 		SceneTransition.change_scene("res://Scene/conclusion_scene.tscn")
 	if Gamemanager.get_currcutscene() == "good ending":
+		Gamemanager.stop_timer()
 		animation_player.play("good ending")	
 		await animation_player.animation_finished
 		SceneTransition.change_scene("res://Scene/conclusion_scene.tscn")
@@ -112,16 +120,17 @@ func _on_start_button_pressed() -> void:
 	print("start")
 	animation_player.play("warning")
 	await animation_player.animation_finished
-	animation_player.play("cutscene")
-	await animation_player.animation_finished
+	if Gamemanager.first_start:
+		animation_player.play("cutscene")
+		await animation_player.animation_finished
 	SceneTransition.change_scene("res://Scene/main.tscn")
 
 
-func play_cutscene(cutscene_name):
-	SceneTransition.change_scene("res://Scene/main menu_LK.tscn")
-	if !cutscene_name == "give up":
-		animation_player.play(cutscene_name)
-	else :
-		animation_player.seek(23.0)
-		animation_player.play("main menu")
+#func play_cutscene(cutscene_name):
+	#SceneTransition.change_scene("res://Scene/main menu_LK.tscn")
+	#if !cutscene_name == "give up":
+		#animation_player.play(cutscene_name)
+	#else :
+		#animation_player.seek(23.0)
+		#animation_player.play("main menu")
 		

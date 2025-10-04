@@ -7,7 +7,9 @@ func _ready() -> void:
 	
 	if Gamemanager.get_chance() > 0:
 		await get_tree().create_timer(4).timeout
-		get_tree().change_scene_to_file("res://Scene/died_continue.tscn")
+		SceneTransition.change_scene("res://Scene/died_continue.tscn")
 	elif Gamemanager.get_chance() <= 0 :
+		await get_tree().create_timer(4).timeout
 		Gamemanager.set_currcutscene("bad ending")
-		get_tree().change_scene_to_file("res://Scene/main menu_LK.tscn")
+		Gamemanager.set_game_result(false)
+		SceneTransition.change_scene("res://Scene/main menu_LK.tscn")

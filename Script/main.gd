@@ -19,25 +19,31 @@ var safe_radius   := 30.0
 func _ready():
 	Gamemanager.start_timer()
 	$Ambient.play()
+	if !Gamemanager.get_quest_status():
+		for child in $orb_spawn.get_children():
+			if child is Marker3D:
+				orb_spawn_points.append(child)
 
-	for child in $orb_spawn.get_children():
-		if child is Marker3D:
-			orb_spawn_points.append(child)
+		for child in $"Monster Spawn".get_children():
+			if child is Marker3D:
+				Monster_spawn_points.append(child)
 
-	for child in $"Monster Spawn".get_children():
-		if child is Marker3D:
-			Monster_spawn_points.append(child)
-
-	for child in $Player_Spawn.get_children():
-		if child is Marker3D:
-			player_spawn_points.append(child)
-
+		for child in $Player_Spawn.get_children():
+			if child is Marker3D:
+				player_spawn_points.append(child)
+		spawn_orb()
+		spawn_monster()
+	else:
+		player_spawn_points = []
+		player_spawn_points.append($Tree_spawn)
 	spawn_player()
-	spawn_orb()
-	spawn_monster()
+
 
 
 func _physics_process(delta):
+	if player == null or get_tree() == null:
+		return  
+
 	if Gamemanager.get_mon_spawn_left() > 0:
 		spawn_monster()
 		Gamemanager.set_mon_spawn_left(-1)
@@ -45,8 +51,10 @@ func _physics_process(delta):
 	if Gamemanager.get_pnt() && Gamemanager.get_score() >= 300:
 		$"CanvasLayer/Interact Guide".visible = true
 		if Input.is_action_just_pressed("Interact"):
+			Gamemanager.set_quest_status(true)
 			print("gg")
-			#get_tree().change_scene_to_file("")
+			Gamemanager.set_currcutscene("sacred tree")
+			SceneTransition.change_scene("res://Scene/main menu_LK.tscn")
 	else:
 		$"CanvasLayer/Interact Guide".visible = false
 
@@ -56,18 +64,25 @@ func _physics_process(delta):
 		$CanvasLayer/Control/Quest1/Quest2.visible = false
 	elif Gamemanager.get_score() >= 300:
 		if !Gamemanager.get_quest_status():
-			Gamemanager.set_quest_status(true)
 			$AnimationPlayer.play("krapib_quest")
 			$Quest.play()
-		$CanvasLayer/Control/Quest1/Quest.visible = false
-		$CanvasLayer/Control/Quest1/Quest2.visible = true
+			$CanvasLayer/Control/Quest1/Quest.visible = false
+			$CanvasLayer/Control/Quest1/Quest2.visible = true
+		elif Gamemanager.get_quest_status():
+			$CanvasLayer/Control/Quest1/Quest2.visible = true
+			$CanvasLayer/Control/Quest1/Quest2/Details.visible = false
+			$"CanvasLayer/Control/Quest1/Last Quest".visible = true
+			$"electric current".visible = true
 
-	get_tree().call_group("Enemies", "update_target_location", player.global_transform.origin, delta)
+	if player and get_tree():
+		get_tree().call_group("Enemies", "update_target_location", player.global_transform.origin, delta)
 
-	camera_top.position = Vector3(player.position.x, 40.0, player.position.z)
-	camera_top.rotation.y = player.rotation.y
+	if player:
+		camera_top.position = Vector3(player.position.x, 40.0, player.position.z)
+		camera_top.rotation.y = player.rotation.y
 
 	_update_minimap_frame()
+
 
 
 func spawn_orb():
@@ -108,6 +123,15 @@ func spawn_monster():
 
 
 func _update_minimap_frame():
+	if !is_inside_tree():
+		return 
+
+	if player == null:
+		return
+
+	if get_tree() == null:
+		return
+
 	var enemies = get_tree().get_nodes_in_group("Enemies")
 	var closest_dist = INF
 
@@ -118,7 +142,7 @@ func _update_minimap_frame():
 				closest_dist = dist
 
 	# ค่าความใกล้ 0–1
-	var t = clamp(1.0 - (closest_dist - danger_radius) / (safe_radius - danger_radius),0.0,1.0)
+	var t = clamp(1.0 - (closest_dist - danger_radius) / (safe_radius - danger_radius), 0.0, 1.0)
 
 	if t > 0.0:
 		var blink = 0.5 + 0.5 * sin(Time.get_ticks_msec() * 0.036)
@@ -127,3 +151,12 @@ func _update_minimap_frame():
 		minimap_frame.modulate = new_color
 	else:
 		minimap_frame.modulate = Color.BLACK
+
+	
+
+
+func _on_area_3d_body_entered(body) -> void:
+	if body.is_in_group("Player"):
+		if Gamemanager.get_quest_status():
+			Gamemanager.set_currcutscene("good ending")
+			SceneTransition.change_scene("res://Scene/main menu_LK.tscn")

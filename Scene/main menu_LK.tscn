@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d83hobqwpkly" path="res://Floor Texture/Bricks076C_1K-JPG/Bricks076C_1K-JPG_Roughness.jpg" id="6_gfhju"]
 [ext_resource type="Texture2D" uid="uid://b1vleyslc3g7q" path="res://Model/Hedge_Leaf_Texture.png" id="7_t8see"]
 [ext_resource type="PackedScene" uid="uid://b0s1s1ls0d4md" path="res://Model/Tree.tscn" id="8_ngy65"]
-[ext_resource type="PackedScene" uid="uid://0pow6k5ii5wn" path="res://Model/Fountain.tscn" id="9_ge6y8"]
-[ext_resource type="PackedScene" uid="uid://c6cty4dcmybjj" path="res://Model/Gate.tscn" id="10_yllv8"]
+[ext_resource type="PackedScene" path="res://Model/Fountain.tscn" id="9_ge6y8"]
+[ext_resource type="PackedScene" path="res://Model/Gate.tscn" id="10_yllv8"]
 [ext_resource type="AudioStream" uid="uid://cadufn5lhnpnu" path="res://Sound/SFX/door creaking.mp3" id="11_fnnje"]
 [ext_resource type="AudioStream" uid="uid://dqx741xk4n2wr" path="res://Sound/voice/hey kid.wav" id="11_t106f"]
 [ext_resource type="AudioStream" uid="uid://csvxjv72roknk" path="res://Sound/SFX/rain-sound.mp3" id="12_jma0k"]
@@ -2856,7 +2856,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameName" type="Label" parent="CanvasLayer/Text"]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0.0727245)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3047,8 +3047,8 @@ light_energy = 7.768
 omni_range = 12.691
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_fnnje")
-volume_db = -15.571
+stream = ExtResource("14_pjygw")
+volume_db = -6.20435
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_jma0k")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Test_Final_Proj"
-run/main_scene="uid://cqmfv457vw7nt"
+run/main_scene="uid://bxdkrhlcmqjoq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]

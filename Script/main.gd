@@ -72,7 +72,7 @@ func _physics_process(delta):
 			$CanvasLayer/Control/Quest1/Quest2.visible = true
 			$CanvasLayer/Control/Quest1/Quest2/Details.visible = false
 			$"CanvasLayer/Control/Quest1/Last Quest".visible = true
-			$"electric current".visible = true
+			$"electric current".visible = false
 
 	if player and get_tree():
 		get_tree().call_group("Enemies", "update_target_location", player.global_transform.origin, delta)

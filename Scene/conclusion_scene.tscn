@@ -1722,6 +1722,7 @@ offset_bottom = 1080.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xjjfu")
 
 [node name="win" type="Node2D" parent="CanvasLayer/Control/Panel"]
+visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Panel/win"]
 offset_left = 194.0
@@ -1739,7 +1740,7 @@ offset_right = 488.0
 offset_bottom = 413.0
 theme_override_fonts/font = ExtResource("2_jcjcx")
 theme_override_font_sizes/font_size = 45
-text = "Play time : "
+text = "Play time "
 
 [node name="Died" type="Label" parent="CanvasLayer/Control/Panel/win"]
 offset_left = 44.0
@@ -1748,28 +1749,27 @@ offset_right = 511.0
 offset_bottom = 485.0
 theme_override_fonts/font = ExtResource("2_jcjcx")
 theme_override_font_sizes/font_size = 50
-text = "Died :      times"
+text = "Died "
 
 [node name="Time" type="Label" parent="CanvasLayer/Control/Panel/win"]
-offset_left = 334.0
-offset_top = 320.0
-offset_right = 702.0
-offset_bottom = 382.0
+offset_left = 307.0
+offset_top = 304.0
+offset_right = 701.0
+offset_bottom = 366.0
 theme_override_fonts/font = ExtResource("3_iyl00")
 theme_override_font_sizes/font_size = 55
-text = "00 mins 00 secs"
+text = ": 00 mins 00 secs"
 
 [node name="Die_frequenzy" type="Label" parent="CanvasLayer/Control/Panel/win"]
-offset_left = 218.0
-offset_top = 389.0
-offset_right = 258.0
-offset_bottom = 462.0
+offset_left = 184.0
+offset_top = 379.0
+offset_right = 224.0
+offset_bottom = 452.0
 theme_override_fonts/font = ExtResource("3_iyl00")
 theme_override_font_sizes/font_size = 65
-text = "0"
+text = ": 0"
 
 [node name="lose" type="Node2D" parent="CanvasLayer/Control/Panel"]
-visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Panel/lose"]
 offset_left = 140.0
@@ -1787,7 +1787,7 @@ offset_right = 488.0
 offset_bottom = 413.0
 theme_override_fonts/font = ExtResource("2_jcjcx")
 theme_override_font_sizes/font_size = 45
-text = "Play time : "
+text = "Play time "
 
 [node name="Died" type="Label" parent="CanvasLayer/Control/Panel/lose"]
 offset_left = 44.0
@@ -1796,7 +1796,7 @@ offset_right = 511.0
 offset_bottom = 485.0
 theme_override_fonts/font = ExtResource("2_jcjcx")
 theme_override_font_sizes/font_size = 50
-text = "Died :      times"
+text = "Died "
 
 [node name="Retry" type="Button" parent="CanvasLayer/Control/Panel/lose"]
 offset_left = 252.0
@@ -1815,22 +1815,22 @@ theme_override_font_sizes/font_size = 75
 text = "Retry"
 
 [node name="Time" type="Label" parent="CanvasLayer/Control/Panel/lose"]
-offset_left = 334.0
-offset_top = 320.0
+offset_left = 308.0
+offset_top = 306.0
 offset_right = 702.0
-offset_bottom = 382.0
+offset_bottom = 368.0
 theme_override_fonts/font = ExtResource("3_iyl00")
 theme_override_font_sizes/font_size = 55
-text = "00 mins 00 secs"
+text = ": 00 mins 00 secs"
 
 [node name="Die_frequenzy" type="Label" parent="CanvasLayer/Control/Panel/lose"]
-offset_left = 218.0
-offset_top = 389.0
-offset_right = 258.0
-offset_bottom = 462.0
+offset_left = 170.0
+offset_top = 378.0
+offset_right = 237.0
+offset_bottom = 451.0
 theme_override_fonts/font = ExtResource("3_iyl00")
 theme_override_font_sizes/font_size = 65
-text = "0"
+text = ": 0"
 
 [node name="Main menu" type="Button" parent="CanvasLayer/Control/Panel"]
 layout_mode = 0

@@ -16,8 +16,8 @@ func _ready() -> void:
 func win():
 	$Good.play()
 	print(Gamemanager.get_time_string())
-	$CanvasLayer/Control/Panel/win/Time.text = Gamemanager.get_time_string()
-	$CanvasLayer/Control/Panel/win/Die_frequenzy.text = str(3 - Gamemanager.player_chance)
+	$CanvasLayer/Control/Panel/win/Time.text = " : " + Gamemanager.get_time_string() + " Times "
+	$CanvasLayer/Control/Panel/win/Die_frequenzy.text = " : " + str(3 - Gamemanager.player_chance)
 	$CanvasLayer/Control/Panel/lose.visible = false
 	$CanvasLayer/Control/Panel/win.visible = true
 	$Player/AnimationPlayer.play("Run")
@@ -27,8 +27,8 @@ func lose():
 	$Bad.play()
 	print(Gamemanager.get_time_string())
 	$AnimationPlayer2.play("Mon_run")
-	$CanvasLayer/Control/Panel/lose/Die_frequenzy.text = str(3 - Gamemanager.player_chance)
-	$CanvasLayer/Control/Panel/lose/Time.text = Gamemanager.get_time_string()
+	$CanvasLayer/Control/Panel/lose/Die_frequenzy.text = " : " + str(3 - Gamemanager.player_chance) + " Times "
+	$CanvasLayer/Control/Panel/lose/Time.text = " : " + Gamemanager.get_time_string()
 	$CanvasLayer/Control/Panel/lose.visible = true
 	$CanvasLayer/Control/Panel/win.visible = false
 	$AnimationPlayer.play("lose")
